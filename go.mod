@@ -1,3 +1,3 @@
 module github.com/mooncool/echo-cli
 
-go 1.15
+go 1.16

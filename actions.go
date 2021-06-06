@@ -4,23 +4,13 @@ package main
 // execute command
 func executeCommand(cmd Command) {
 	switch cmd.Action {
-	case cmdActionNewWebProject:
+	case cmdActionInitWebProject:
 		genWebProjectFolders()
 	}
 }
 
 func genWebProjectFolders() {
-	folders := []string{
-		folderApplication,
-		folderConfig,
-		folderController,
-		folderEntity,
-		folderMiddleware,
-		folderRepository,
-		folderService,
-	}
-
-	for _, folder := range folders {
+	for _, folder := range projectFolders {
 		genFolder(folder)
 	}
 }

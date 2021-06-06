@@ -1,7 +1,11 @@
 package main
 
-// Command carries command parameters
+type Config struct {
+	ProjectDir string // project directory
+}
+
+// Command command parameters
 type Command struct {
-	Action   string
-	FilePath string
+	Action string // command action
+	Dir    string // command working directory
 }
