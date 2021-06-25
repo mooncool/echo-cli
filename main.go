@@ -8,14 +8,16 @@ import (
 
 func main() {
 	cmd := Command{
-		Action:   "new",
-		FilePath: "./",
+		Action: cmdActionInitWebProject,
+		Dir:    "./",
 	}
-	fmt.Printf("Echo command line tool. Version: %s\n", Version)
+	fmt.Printf("Echo project command line tool. Version: %s\n", Version)
+
 	flag.String("h", "bb", "haha")
-	flag.StringVar(&cmd.Action, "a", "new", "Command actions. Such as 'new'")
-	flag.StringVar(&cmd.FilePath, "f", "./", "Create file path.")
+	flag.StringVar(&(cmd.Action), "a", cmdActionInitWebProject, "Command actions. Such as 'init'")
+	flag.StringVar(&(cmd.Dir), "d", defaultWorkingDir, "Project directory.")
 	fmt.Println("command:", &cmd)
+
 	flag.Parse()
 
 	if flag.NArg() > 0 {
