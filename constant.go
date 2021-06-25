@@ -20,8 +20,8 @@ const (
 const (
 	defaultWorkingDir = "./" // default working directory
 
-	cmdActionInitWebProject = "init" // init web project
-	cmdActionNewWebProject  = "new"  // new web project
+	cmdActionInitWebProject = "init"           // init web project
+	cmdActionNewController  = "new controller" // new controller
 )
 
 var (

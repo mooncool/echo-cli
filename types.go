@@ -6,6 +6,6 @@ type Config struct {
 
 // Command command parameters
 type Command struct {
-	Action string // command action
-	Dir    string // command working directory
+	Action     string // command action
+	ProjectDir string // project root directory (command working directory)
 }

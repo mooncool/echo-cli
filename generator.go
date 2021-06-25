@@ -13,10 +13,11 @@ func genFolder(path string) {
 	// }
 
 	if os.IsNotExist(err) {
-		fmt.Printf("folder %s exists\n", path)
+		fmt.Printf("folder %s doesn't exist, creating...\n", path)
 		if err = os.MkdirAll(path, 0755); err != nil {
 			panic(err)
 		}
+		fmt.Printf("folder %s is created\n", path)
 	}
 
 	// if err = os.MkdirAll(path, 0755); err != nil {
