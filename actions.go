@@ -1,16 +1,19 @@
 // All of the command actions
 package main
 
+import "os"
+
 // execute command
 func executeCommand(cmd Command) {
 	switch cmd.Action {
 	case cmdActionInitWebProject:
-		genWebProjectFolders()
+		initWebProjectFolders(cmd.ProjectDir)
+	case cmdActionNewController:
 	}
 }
 
-func genWebProjectFolders() {
+func initWebProjectFolders(projectRoot string) {
 	for _, folder := range projectFolders {
-		genFolder(folder)
+		genFolder(projectRoot + string(os.PathSeparator) + folder)
 	}
 }
